@@ -109,3 +109,25 @@ if st.sidebar.button("Predict for current segment"):
     Xp = scaler.transform([feat])
     pred = model.predict(Xp)[0]
     st.sidebar.info(f"Predicted label: {pred}")
+
+# Option to download labeled data
+if labels:
+    # Build a labeled DataFrame for export
+    export_data = []
+    for ts, lab in labels.items():
+        row = df.loc[ts]
+        export_data.append({
+            "timestamp": ts,
+            "open": row["open"],
+            "high": row["high"],
+            "low": row["low"],
+            "close": row["close"],
+            "volume": row["volume"],
+            "stoch_k": row["stoch_k"],
+            "stoch_d": row["stoch_d"],
+            "label": lab
+        })
+    labeled_df = pd.DataFrame(export_data)
+    csv = labeled_df.to_csv(index=False).encode("utf-8")
+    st.download_button("📥 Download Labeled Data", data=csv, file_name="labeled_data.csv", mime="text/csv")
+
