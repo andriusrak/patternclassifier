@@ -668,5 +668,5 @@ def main():
         else:
             st.write("Train a model first to use the pattern finder.")
 
-  if name == "main":
+if name == "main":
     main()
