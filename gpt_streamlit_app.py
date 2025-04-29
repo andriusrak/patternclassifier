@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import mplfinance as mpf
 
 # Constants
-data_file = "data/ohlcv_stochastic.csv"
+data_file = "ohlcv_stochastic.csv"
 label_store = "labels.pkl"
 model_store = "model.pkl"
 scaler_store = "scaler.pkl"
