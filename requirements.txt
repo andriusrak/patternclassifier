@@ -4,3 +4,4 @@ numpy>=1.26.4
 scikit-learn>=1.4.1
 matplotlib>=3.8.3
 mplfinance>=0.12.10b0
+plotly>=5.0.0
